@@ -1,0 +1,223 @@
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+
+
+.billify {
+    background-color: rgba(254, 254, 254, 0);
+    backdrop-filter: blur(10px);
+}
+
+
+
+header {
+    
+    background-color: rgba(255, 255, 255, 1);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+
+  nav {
+    background: linear-gradient(135deg, #ffffff5f 0%, #ffffff42 100%);
+    background-color: rgba(11, 8, 8, 0.439);
+    padding: 1rem;
+   
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 30px;
+    padding: 200px;
+  }
+
+  nav a:hover {
+    color: #ffd700;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+#addRoom {
+    background-color: #dddddd;
+    color: rgb(0, 0, 0);
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    border: none;
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+    margin-top: 100px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+#addRoom:hover {
+    background-color: #ffffff;
+}
+
+/* Style for Remove button */
+.remove-button {
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    border: none;
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: #ffffff;
+}
+
+
+#saveData {
+    background-color: #dddddd;
+    color: rgb(0, 0, 0);
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    border: none;
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+#saveData:hover {
+    background-color: #ffffff;
+}
+
+
+.container {
+    margin-left: 200px;
+   background-color: rgba(255, 255, 255, 0.842);
+   backdrop-filter: blur(10px);
+   width: 900px;
+   padding-right: 30px;
+   padding-left: 0px;
+   padding-bottom: 30px;
+   border-radius: 40px;
+}
+
+
+ 
+
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #0b4079;
+    color: white;
+   
+}
+
+input {
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    width: 110px;
+    height: 40px;
+    margin-left: 40px;
+    border: none;
+    font-size: 15px;
+}
+
+.roomdiv {
+    background-color: rgb(214, 91, 91);
+    width: 300px;
+}
+
+.bill {
+    color: blue;
+}
+
+.billNo {
+    font-size: 390px;
+}
+
+#factsContainer {
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.749);
+    width: 490px;
+    margin-left: 200px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    border-top-left-radius: 30px;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#factsContainer::-webkit-scrollbar  {
+    width: 10px;
+}
+
+#factsContainer::-webkit-scrollbar-track  {
+    display: hidden;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.496);
+}
+
+#factsContainer::-webkit-scrollbar-thumb  {
+    display: hidden;
+    
+    background-color: rgba(255, 255, 255, 0.496);
+}
+
+#showMoreBtn {
+    background-color: rgb(255, 255, 255);
+    width: 120px  ;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    color: black;
+    margin-top: 60px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#showMoreBtn:hover {
+    background-color: rgb(209, 209, 209);
+}

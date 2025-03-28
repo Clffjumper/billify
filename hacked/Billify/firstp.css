@@ -1,0 +1,157 @@
+body {
+  background-color: none;
+  margin-top: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.back {
+  z-index: -1;
+  min-width: 100%;
+  max-height: 100%;
+  position: fixed;
+  margin-left: 0px;
+  margin-top: 0px;
+
+}
+
+.navbarlist {
+  background-color: rgba(255, 255, 255, 0.397);
+  margin-top: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  width: 1360px;
+  margin-left: 40px;
+
+}
+
+.navcontent {
+  width: 1200px;
+  height: 60px;
+  background-color: none;
+  display: flex;
+  margin-left: 110px;
+
+}
+
+.busco {
+  color: white;
+  margin-top: 9px;
+  font-size: 35px;
+  margin-bottom: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+  
+   
+}
+
+
+
+nav ul {
+  list-style: none;
+  display: inline-flex;
+  margin-left: 10px;
+  font-size: 18px;
+  margin-left: 600px;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+nav ul li {
+  margin-left: 40px;
+  margin-top: 0px;
+  font-family: "Inter", sans-serif;
+  color: white;
+  cursor: pointer;
+}
+
+.loginsection {
+  width: 300px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.332);
+  margin-left: 585px;
+  margin-top: 60px;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  
+}
+
+.login {
+  font-size: 20px;
+  margin-left: 110px;
+  font-size: 29px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-top: 30px;
+}
+
+.usn {
+ color: white;
+ margin-top: 30px;
+ margin-left: 40px;
+ font-size: 20px;
+ font-family: "Inter", sans-serif;
+}
+
+ .usu {
+  border-radius: 20px;
+  width: 190px;
+  border-style: none;
+  height: 30px;
+  font-family: "Inter", sans-serif;
+  color: rgb(0, 0, 0);
+  padding-left: 30px;
+  font-size: 20px;
+  font-variant: small-caps;
+  
+
+}
+
+.usninput {
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+ 
+} 
+
+.sub {
+  border-radius: 20px;
+  background-color: rgb(88, 208, 58);
+  width: 90px;
+  height: 30px;
+  margin-top: 30px;
+  margin-left: 110px;
+  cursor: pointer;
+  font-size: 16px;
+  border-style: none;
+  color: white;
+  
+}
+
+.copyright {
+ 
+ 
+  margin-top: 68px;
+
+
+  width: 100%;
+  height: 50px;
+}
+
+.copyright p {
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

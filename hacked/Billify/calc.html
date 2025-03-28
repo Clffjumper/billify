@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body> 
+    <section class="bgvid">
+        <video class="video-background" autoplay muted loop playsinline>
+            <source src="shanmu/house2.mp4" type="video/mp4" />
+           
+          </video>
+    </section>
+
+
+
+    
+    <header class="billify">
+        <h1 style="font-size: 60px; font-style: italic;">BILLIFY</h1> 
+        
+        
+        <nav>
+          <ul>
+            <li><a href="shanmu/intropage.html">HOME</a></li>
+            <li><a href="shanmu/about.html">ABOUT</a></li>
+            <li><a href="shanmu/contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+      </header>
+        <main>
+    <div class="container">
+        <h1 style="margin-left: 300px; margin-top: 100px; padding-top: 40px; ">Electricity Bill Calculator</h1>
+        <button id="addRoom">➕ Add Room</button>
+        <div id="roomsContainer"></div>
+        <h2 style="margin-left: 430px; margin-top: 100px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Total Bill: <span id="totalBill">0</span> Rs</h2>
+        
+
+
+
+
+
+
+
+        <style>
+            .fact {
+                display: none; /* Hide all facts initially */
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h2 style="margin-left: 300px; font-size: 40px;">Energy-Saving Facts</h2>
+        <div id="factsContainer"></div>
+    
+        <button id="showMoreBtn" onclick="showRandomFacts()">Show More Facts</button>
+    
+        <script>
+            let facts = [
+                "LED bulbs use 75% less energy than incandescent bulbs.",
+                "Phantom load (standby power) accounts for 5-10% of home electricity use.",
+                "Energy-efficient appliances use 20-50% less electricity.",
+                "Turning off lights when leaving a room can reduce electricity consumption by 10%.",
+                "Using natural light during the day saves electricity.",
+                "Ceiling fans use much less energy than air conditioners.",
+                "Setting the AC thermostat to 24-26°C can reduce energy use.",
+                "Sealing gaps in windows and doors improves heating/cooling efficiency.",
+                "Regularly cleaning or replacing AC filters improves airflow.",
+                "Using curtains or blinds to block sunlight reduces cooling costs.",
+                "Microwaves use less electricity than ovens for small meals.",
+                "Keeping refrigerator doors closed reduces energy waste.",
+                "A full freezer uses less energy than an empty one.",
+                "Using a pressure cooker or induction cooktop is more efficient.",
+                "Running dishwashers and washing machines with full loads saves energy.",
+                "Using power strips helps reduce standby power usage.",
+                "Laptops consume 50-80% less energy than desktop computers.",
+                "Lowering screen brightness reduces power consumption.",
+                "Using battery-powered devices efficiently extends battery life.",
+                "Smart thermostats help optimize electricity use."
+            ];
+    
+            let displayedFacts = new Set(); // Keep track of displayed facts
+    
+            function showRandomFacts() {
+                let factsContainer = document.getElementById("factsContainer");
+                let factsToShow = [];
+    
+                // Select 5 unique random facts
+                while (factsToShow.length < 5 && displayedFacts.size < facts.length) {
+                    let randomIndex = Math.floor(Math.random() * facts.length);
+                    if (!displayedFacts.has(randomIndex)) {
+                        factsToShow.push(facts[randomIndex]);
+                        displayedFacts.add(randomIndex);
+                    }
+                }
+    
+                // Display the selected facts
+                factsToShow.forEach(fact => {
+                    let p = document.createElement("p");
+                    p.textContent = fact;
+                    factsContainer.appendChild(p);
+                });
+    
+                // Hide button when all facts are shown
+                if (displayedFacts.size >= facts.length) {
+                    document.getElementById("showMoreBtn").style.display = "none";
+                }
+            }
+    
+            // Show first set of random facts initially
+            showRandomFacts();
+        </script>`
+    </div>
+
+    <script>
+        document.getElementById("addRoom").addEventListener("click", function() {
+            let roomDiv = document.createElement("div");
+            roomDiv.classList.add("room");
+            
+            let roomSelect = document.createElement("select");
+            ["Living Room", "Bedroom", "Kitchen", "Bathroom"].forEach(room => {
+                let option = document.createElement("option");
+                option.value = room;
+                option.textContent = room;
+                roomSelect.appendChild(option);
+            });
+
+            let applianceSelect = document.createElement("select");
+            ["AC", "Fan", "Light", "Fridge"].forEach(appliance => {
+                let option = document.createElement("option");
+                option.value = appliance;
+                option.textContent = appliance;
+                applianceSelect.appendChild(option);
+            });
+
+            let kWhInput = document.createElement("input");
+            kWhInput.type = "number";
+            kWhInput.placeholder = "kW";
+            
+            let hoursInput = document.createElement("input");
+            hoursInput.type = "number";
+            hoursInput.placeholder = "Hours per day";
+
+            let billLabel = document.createElement("span");
+            billLabel.textContent = " Bill: 0 Rs ";
+
+            let removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.classList.add("remove-button");  // Apply CSS class
+            removeButton.addEventListener("click", function() {
+                roomDiv.remove();
+                updateTotalBill();
+            });
+
+            roomDiv.append(roomSelect, applianceSelect, kWhInput, hoursInput, billLabel, removeButton);
+            document.getElementById("roomsContainer").appendChild(roomDiv);
+
+            kWhInput.addEventListener("input", updateBill);
+            hoursInput.addEventListener("input", updateBill);
+        });
+
+        function updateBill(event) {
+            let roomDiv = event.target.parentElement;
+            let kWh = parseFloat(roomDiv.querySelector("input:nth-of-type(1)").value) || 0;
+            let hours = parseFloat(roomDiv.querySelector("input:nth-of-type(2)").value) || 0;
+            let cost = kWh * hours * 5 *30;
+            roomDiv.querySelector("span").textContent = ` Bill: ${cost} Rs `;
+           
+            updateTotalBill();
+        }
+
+        function updateTotalBill() {
+            let total = 0;
+            document.querySelectorAll("#roomsContainer span").forEach(bill => {
+                total += parseFloat(bill.textContent.replace(" Bill: ", "").replace(" Rs", "")) || 0;
+            });
+            document.getElementById("totalBill").textContent = total;
+        }
+
+        document.getElementById("saveData").addEventListener("click", function() {
+            let rows = [];
+            document.querySelectorAll("#roomsContainer .room").forEach(roomDiv => {
+                let room = roomDiv.querySelector("select:nth-of-type(1)").value;
+                let appliance = roomDiv.querySelector("select:nth-of-type(2)").value;
+                let kWh = parseFloat(roomDiv.querySelector("input:nth-of-type(1)").value) || 0;
+                let hours = parseFloat(roomDiv.querySelector("input:nth-of-type(2)").value) || 0;
+                let bill = kWh * hours * 4;
+
+                rows.push({ room, appliance, kWh, hours, bill });
+            });
+
+            fetch("YOUR_GOOGLE_SCRIPT_URL", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(rows)
+            })
+            .then(response => response.json())
+            .then(data => console.log("Saved:", data))
+            .catch(error => console.error("Error:", error));
+
+            alert("Data saved to Google Sheets!");
+        });
+    </script>
+
+
+
+
+</body>
+</html>
